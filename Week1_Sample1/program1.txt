@@ -1,0 +1,28 @@
+1) What does the code do in each section of the program
+    -Importing libraries
+    -namespace foldername (file directory)
+    -class name of the program/file
+    -Start of main program (static and void are protocols)
+    -variable dictionary list/initiating values (potentially functions)
+    -console.
+        -writeline (program prints)
+        -write     (program prints expecting return)
+        -readline  (accepts input and applies value to variable)
+2) What is the overall goal of the program?
+    Allow the user to do math/works like a calculator
+3) Do you see issues with the program?
+    The code for multiply is missing.
+4) Do you have questions about the program?
+
+5) Can you test out your questions (#4) by creating an educated guess, then make changes to the code that test your educated guess?
+
+6) Please generated solutions to the issues (#3) in the program and incorporated them in the program to fix it.
+    Placed in the switch function
+        case "Multiply":
+            intResult = int1 * intNum2;
+            break;
+    Placed in the Double function
+        else if (strOperand == "Multiply")
+        {
+            Console.WriteLine($"\n\nThe product of {intNum1} and {intNum2}equals: {dblResult}");
+        }

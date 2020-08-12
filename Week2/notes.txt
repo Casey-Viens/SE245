@@ -1,0 +1,149 @@
+For each student, enter a name and 5 lab grades.  Display each student with each average grade for their 5 labs, and their letter grade.  Drop down a line or two, and then display the average for each lab #.  (Average grade on Lab #1 for all students)
+
+
+//Casey Viens
+//Lab2~~~x number of students with 5 grades each, calculate average and letter grade for each student and average for each lab across all students.
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lab2CV
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            String name, grades, letter;
+            Int32 intCntr=0;
+            Double grade, totalgrade = 0, gradeaverage, lab1total = 0, lab2total = 0, lab3total = 0, lab4total = 0, lab5total = 0, lab1average, lab2average, lab3average, lab4average, lab5average;
+
+            List<string> students = new List<string>();
+            List<string> lettergrade = new List<string>();
+            List<double> lab1 = new List<double>();
+            List<double> lab2 = new List<double>();
+            List<double> lab3 = new List<double>();
+            List<double> lab4 = new List<double>();
+            List<double> lab5 = new List<double>();
+            List<double> average = new List<double>();
+
+            do
+            {
+                Console.Write("Please enter the students name, or a 0 if you are done.");
+                name=Console.ReadLine();
+                students.Add(name);
+                totalgrade=0;
+                if (name != "0")
+                {
+                    intCntr++;
+                    for(int i = 1; i <=5; i++)
+                    {
+                        Console.Write($"Please enter {name}'s Lab grade: ");
+                        grades=Console.ReadLine();
+                        grade = Convert.ToDouble(grades);
+                        if (i == 1)
+                        {
+                            lab1.Add(grade);
+                            totalgrade += grade;
+                        } 
+                        if (i == 2)
+                        {
+                            lab2.Add(grade);
+                            totalgrade += grade;
+                        } 
+                        if (i == 3)
+                        {
+                            lab3.Add(grade);
+                            totalgrade += grade;
+                        } 
+                        if (i == 4)
+                        {
+                            lab4.Add(grade);
+                            totalgrade += grade;
+                        } 
+                        if (i == 5)
+                        {
+                            lab5.Add(grade);
+                            totalgrade += grade;
+                            gradeaverage = totalgrade / 5;
+                            average.Add(gradeaverage);
+                            if(gradeaverage >= 100)
+                            {
+                                letter = "A+";
+                            }
+                            else if(gradeaverage >= 94)
+                            {
+                                letter = "A";
+                            }
+                            else if(gradeaverage >= 90)
+                            {
+                                letter = "A-";
+                            }
+                            else if(gradeaverage >= 87)
+                            {
+                                letter = "B+";
+                            }
+                            else if(gradeaverage >= 83)
+                            {
+                                letter = "B";
+                            }
+                            else if(gradeaverage >= 80)
+                            {
+                                letter = "B-";
+                            }
+                            else if(gradeaverage >= 77)
+                            {
+                                letter = "C+";
+                            }
+                            else if(gradeaverage >= 73)
+                            {
+                                letter = "C";
+                            }
+                            else if(gradeaverage >= 70)
+                            {
+                                letter = "C-";
+                            }
+                            else if(gradeaverage >= 67)
+                            {
+                                letter = "D+";
+                            }
+                            else if(gradeaverage >= 63)
+                            {
+                                letter = "D";
+                            }
+                            else if(gradeaverage >= 60)
+                            {
+                                letter = "D-";
+                            }
+                            else
+                            {
+                                letter = "F";
+                            }
+                            lettergrade.Add(letter);
+                        } 
+                    }
+                }
+            } while (name != "0");
+
+            for (int i = 0; i < intCntr; i++)
+            {
+                Console.WriteLine($"\nStudent {students[i]} earned a(n) {lettergrade[i]} with an average of {average[i]} with the grades {lab1[i]}, {lab2[i]}, {lab3[i]}, {lab4[i]}, and {lab5[i]}.");
+                lab1total += lab1[i];
+                lab2total += lab2[i];
+                lab3total += lab3[i];
+                lab4total += lab4[i];
+                lab5total += lab5[i];
+            }
+            lab1average = lab1total / intCntr;
+            lab2average = lab2total / intCntr;
+            lab3average = lab3total / intCntr;
+            lab4average = lab4total / intCntr;
+            lab5average = lab5total / intCntr;
+            Console.WriteLine($"\n\nThe lab averages are, \nLab 1: {lab1average} \nLab 2: {lab2average} \nLab 3: {lab3average} \nLab 4: {lab4average} \nLab 5: {lab5average}");
+            Console.WriteLine("Press Any Key to Continue");
+            Console.ReadKey();
+        }
+    }
+}

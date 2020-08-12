@@ -1,0 +1,14 @@
+Enter Student name & four grades and calculate average and assign a letter grade (Bonus if they use 20%, 20%, 25%, 35%)
+
+
+
+20*90=18
+20*90=18
+25*90=22.5
+35*90=31.5
+
+
+dotnet run
+
+dotnet new sln
+dotnet sln add .
