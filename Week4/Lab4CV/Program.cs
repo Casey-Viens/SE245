@@ -27,7 +27,7 @@ namespace Lab4CV
             Person contact = new Person();
             
             Console.Write("Please enter the person's first name: ");
-            contact.firstName = Console.ReadLine();
+            contact.firstName = Console.ReadLine() + "Poopy";
             Console.Write("Please enter the person's middle name: ");
             contact.middleName = Console.ReadLine();
             Console.Write("Please enter the person's last name: ");
