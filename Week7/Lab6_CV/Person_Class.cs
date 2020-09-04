@@ -192,7 +192,7 @@ namespace Lab5_CV
                 //Ensures the email entered is valid based on the 2@2.2 rule
                 int atLocation = value.IndexOf("@");
                 int periodLocation = value.LastIndexOf(".");
-                if (value.Length >= 8 && atLocation >= 2 && (periodLocation + 2) < value.Length)
+                if (value.Length >= 8 && atLocation >= 2 && (periodLocation + 3) <= value.Length)
                 {
                     email = value;
                 }

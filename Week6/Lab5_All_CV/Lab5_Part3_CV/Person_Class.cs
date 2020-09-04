@@ -150,7 +150,7 @@ namespace Lab5_CV
             set
             {
                 //Ensures the data in contact.Zip is equal to 5 digits and therefore not an areacode
-                if (value.Length == 5)
+                if (value.Length == 5 && value.All(char.IsDigit))
                 {
                     zip = value;
                 }
@@ -171,7 +171,7 @@ namespace Lab5_CV
                 //Removes all "-" from the data in contact.Phone
                 string tempPhone = value.Replace("-", "");
                 //Ensures the phone number is the right number of characters
-                if (tempPhone.Length == 10)
+                if (tempPhone.Length == 10 && tempPhone.All(char.IsDigit))
                 {
                     phone = tempPhone;
                 }
@@ -192,7 +192,7 @@ namespace Lab5_CV
                 //Ensures the email entered is valid based on the 2@2.2 rule
                 int atLocation = value.IndexOf("@");
                 int periodLocation = value.LastIndexOf(".");
-                if (value.Length >= 8 && atLocation >= 2 && (periodLocation + 2) < value.Length)
+                if (value.Length >= 8 && atLocation >= 2 && (periodLocation + 3) <= value.Length)
                 {
                     email = value;
                 }

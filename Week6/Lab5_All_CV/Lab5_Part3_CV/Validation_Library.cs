@@ -12,10 +12,12 @@ namespace Lab5_CV
         {
             bool result = false;
 
-            string[] BadWordsList = { "Blah", "Poop", "Homework", "Caca" };
+            string[] BadWordsList = { "BLAH", "POOP", "HOMEWORK", "CACA" };
+
+            String temp = contact.ToUpper();
 
             foreach (string BadWord in BadWordsList)
-            if (contact.Contains(BadWord))
+            if (temp.Contains(BadWord))
             {
                 result = true;
             }

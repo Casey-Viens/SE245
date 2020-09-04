@@ -23,7 +23,7 @@ namespace Lab5_CV
                 //Removes all "-" from the data in contact.CellPhone
                 string tempCellPhone = value.Replace("-", "");
                 //Ensures the cell phone number is the right number of characters
-                if (tempCellPhone.Length == 10)
+                if (tempCellPhone.Length == 10 && tempCellPhone.All(char.IsDigit))
                 {
                     cellPhone = tempCellPhone;
                 }
@@ -41,7 +41,7 @@ namespace Lab5_CV
             }
             set
             {
-                if(value.Contains("instagram.com/"))
+                if(value.Contains("instagram.com/") && value.Length > 14)
                 {
                     instagramURL = value;
                 }
